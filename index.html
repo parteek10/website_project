@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav bar</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <style>
+        * {
+            padding:0 ;
+            margin:0 ;
+        }
+        header {
+            background-color:#ccc;
+            position: sticky;
+            top:0px ;
+        }
+        nav {
+            max-width: 1200px;
+            margin:0px auto ;
+            height:50px ;
+            line-height: 50px ;
+        }
+        span.logo {
+            float:left;
+        }
+        #nav-icon {
+            display: none;
+        }
+        ul.menu-items {
+            list-style-type: none;
+            margin:0 ;
+            padding:0 ;
+            float:right ;
+        }
+        /* ul.menu-items {
+            float:right;
+        } */
+        ul li {
+            display:inline ;
+        }
+        ul li a{
+            text-decoration: none;
+            padding:5px ;
+            color:black ;
+        }
+        ul li:hover {
+            background-color:red;
+        }
+        /* img {
+            z-index: 5;
+        } */
+        #first-image{
+            /* position:relative ; */
+            /* top:0 ; */
+            /* left:0 ; */
+            /* right:0 ; */
+            /* bottom:0 ; */
+            /* z-index: -7; */
+            width:1200px ;
+            height:auto ;
+        }
+        #first{
+            background-image:url('/images/AC3Q1428.jpg');
+            width:100% ;
+            height:1100px ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        @media screen and (max-width:768px) {
+            .menu-items {
+                float:left ;
+                clear:left ;
+            }
+            #nav-icon {
+                display: block;
+            }
+            ul.menu-items {
+                width:100%;
+                text-align:center ;
+            }
+            ul.menu-items li {
+                display:inline-block;
+                background-color: aqua;
+                width:100% ;
+            }
+            ul.menu-items li:hover {
+                background-color:red;
+            }
+            #nav-icon {
+                float:right ;
+                height:50px ;
+                width:50px ;
+                text-align: center;
+                font-size: 30px ;
+                background-color:red ;
+                cursor:pointer ;
+            }
+            .menu-items {
+                display:none ;
+            }
+            #nav-icon:before {
+                content:'\f0c9 ' ;
+                font-family: fontAwesome;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <span class="logo" id="air">Air India</span>
+          <span id="nav-icon" onclick="myfunction()"></span>
+          <ul class="menu-items" id="nav-item">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Flight Schedule</a></li>
+            <li><a href="#">Fare Rules</a></li>
+            <li><a href="#">Charter Flights</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </nav>
+    </header>
+    <section id="first">
+        <div id="container">
+            <div id="form">
+                <p>SEARCH FOR FLIGHTS</p><hr>
+                <input type="radio" id="return-trip" name="one-two-way">
+                <label for="return-trip">Return Trip</label>
+                <input type="radio" id="one-way" name="one-two-way">
+                <label for="one-way">One Way</label><br>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <label  for="departing-from">
+                            <i class="fa fa-map-marker"
+                            aria-hidden="true"></i>Departing from
+                            </label> 
+                        </td>
+                        <td colspan="2">
+                            <label  for="travelling-to">
+                            <i class="fa fa-map-marker"
+                            aria-hidden="true"></i>Travelling to
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                             <td rowspan="2" colspan="2">
+                                 <select id="departing-location" name="departing-location">
+                                     <option value="delhi">
+                                         Delhi
+                                     </option>
+                                     <option value="chennai">
+                                         Chennai
+                                     </option>
+                                     <option value="Mumbai">
+                                         Mumbai
+                                     </option>
+                                     <opton value="patna">
+                                         Patna
+                                     </opton>
+                                     <option value="Kolkata">
+                                         Kolkata
+                                     </option>
+                                     <option value="amritsar">
+                                         Amritsar
+                                     </option>
+                                 </select>
+                             </td>
+                             <td rowspan="2" colspan="2">
+                                <select id="destination" name="destination">
+                                    <option value="delhi">
+                                        Delhi
+                                    </option>
+                                    <option value="chennai">
+                                        Chennai
+                                    </option>
+                                    <option value="Mumbai">
+                                        Mumbai
+                                    </option>
+                                    <opton value="patna">
+                                        Patna
+                                    </opton>
+                                    <option value="Kolkata">
+                                        Kolkata
+                                    </option>
+                                    <option value="amritsar">
+                                        Amritsar
+                                    </option>
+                                </select>
+                            </td>
+                    </tr>
+                    <tr> </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="departing-date">
+                            <i class="fa fa-calendar" aria-hidden="true">
+                             </i>
+                             Departing</label>
+                        </td>
+                        <td colspan="2">
+                            <label for="returning-date">
+                            <i class="fa fa-calendar" aria-hidden="true">
+                             </i>
+                             Returning
+                             </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspaan="2" colspan="2">
+                            <input type="date" name="departing-date" id="departing-date">
+                        </td>
+                        <td rowspaan="2" colspan="2">
+                            <input type="date" name="returning-date" id="returning-date">
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                      <td colspan="2">
+                          <label for="adults">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            Adults
+                          </label>
+                      </td>
+                      <td colspan="2">
+                        <label for="children">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            Children
+                        </label>
+                      </td>
+                    </tr>
+                     <tr>
+                       <td colspan="2" rowspan="2">
+                           <input type="number" id="adults" name="adults">
+                       </td>
+                       <td colspan="2" rowspan="2">
+                         <input type="number" id="children" name="children">
+                       </td>
+                     </tr>
+                     <tr></tr>
+                     <tr>
+                        <td colspan="2">
+                            <label for="infants">
+                              <i class="fa fa-user-plus" aria-hidden="true"></i>
+                              Infants
+                            </label>
+                        </td>
+                        <td colspan="2">
+                          <label for="Promo-code">
+                              Promo Code
+                          </label>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" rowspan="2">
+                            <input type="number" id="Infants" name="infants">
+                        </td>
+                        <td colspan="2" rowspan="2">
+                          <input type="number" id="promo-code" name="promo-code">
+                        </td>
+                     </tr>
+                     <tr></tr>
+                     <tr>
+                         
+                     </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script>
+       function myfunction() {
+        var nav=document.getElementById("nav-item") ;
+        if(nav.style.display=="none") {
+            nav.style.display="block" ;
+
+        } else {
+            nav.style.display="none" ;
+        }
+       }
+    </script>
+</body>
+</html>
