@@ -47,27 +47,6 @@
         ul li:hover {
             background-color:red;
         }
-        /* img {
-            z-index: 5;
-        } */
-        #first-image{
-            /* position:relative ; */
-            /* top:0 ; */
-            /* left:0 ; */
-            /* right:0 ; */
-            /* bottom:0 ; */
-            /* z-index: -7; */
-            width:1200px ;
-            height:auto ;
-        }
-        #first{
-            background-image:url('/images/AC3Q1428.jpg');
-            width:100% ;
-            height:1100px ;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
         @media screen and (max-width:768px) {
             .menu-items {
                 float:left ;
@@ -79,11 +58,14 @@
             ul.menu-items {
                 width:100%;
                 text-align:center ;
+                line-height:25px ;
+                font-size:12px ;
             }
             ul.menu-items li {
                 display:inline-block;
                 background-color: aqua;
                 width:100% ;
+                /* line-height:20px ; */
             }
             ul.menu-items li:hover {
                 background-color:red;
@@ -106,6 +88,108 @@
             }
         }
     </style>
+      <style>
+        section {
+            clear:both ;
+            background-image: url('images/AC3Q1428.jpg');
+            height:100% ;
+            background-size: cover;
+            background-position:left ;
+            background-attachment: fixed;
+            padding:40px ;
+            font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        }
+        #main-container {
+            display: grid;
+            grid-template-columns: 40% 40% ;
+            grid-gap: 1rem ;
+            justify-content: space-around;
+            max-width: 1200px ;
+            margin:0 auto ;
+            align-items: center;
+        }
+        #form-container {
+            box-sizing: border-box;
+            /* background-color: rgba(255,165 , 0 , 0.4); */
+            background-color:rgba(0, 0, 0,0.5) ;
+            padding:20px ;
+            color:white ;
+            line-height:1.5 ;
+            /* width:50% ; */
+        }
+        #article {
+            color:white ;
+            /* align-items: center; */
+        }
+        #heading {
+            border-bottom: 2px solid white ;
+            color:white ;
+            padding:10px ;
+            box-sizing: border-box;
+        }
+    #layout {
+        display:grid ;
+        grid-template-columns: 1fr 1fr ;
+        justify-content: gap-around;
+        /* background-color: orange; */
+        grid-column-gap: 1rem ;
+        grid-row-gap: 3rem;
+        color:white ;
+        /* padding:5px ; */
+    }
+    input , select  {
+        width:80% ;
+        height:25px ;
+        margin:0 auto ;
+    }
+    input[type="radio"] {
+        width:auto ;
+        color:white ;
+        margin: 15px 10px ;
+        /* margin-left:10px ; */
+    }
+    input[type="button"] {
+        margin-top:15px ;
+        width:83% ;
+        color:white ;
+        border-radius: 5px;
+        height:30px;
+        background-color: black;
+    }
+    #flights-details {
+        background-color: rgb(255, 165, 0) ;
+        padding:10px 15px ;
+        box-sizing: border-box;
+        border-radius: 25px ;
+        /* margin-top:10px; */
+    }
+    #flights-details a {
+        text-decoration: none;
+        color:white ;
+        /* margin-top:10px; */
+        /* padding:10px 15px ; */
+        
+    }
+    @media screen and (max-width:768px ) {
+         #main-container {
+             grid-template-columns:1fr ;
+             grid-template-rows: auto auto ;
+             align-items: unset;
+         }
+         #form-container {
+             grid-row-start: 2;
+         }
+         #article {
+             text-align: center;
+         }
+    }
+    @media screen and (max-width:426px ) {
+        #layout {
+            display: block ;
+        }
+
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -122,149 +206,125 @@
           </ul>
         </nav>
     </header>
-    <section id="first">
-        <div id="container">
-            <div id="form">
-                <p>SEARCH FOR FLIGHTS</p><hr>
+    <section id="sec1">
+        <div id="main-container">
+            <div id="form-container">
+                <div id="heading">SEARCH FOR FLIGHTS</div>
+                <form>
                 <input type="radio" id="return-trip" name="one-two-way">
                 <label for="return-trip">Return Trip</label>
                 <input type="radio" id="one-way" name="one-two-way">
                 <label for="one-way">One Way</label><br>
-                <table>
-                    <tr>
-                        <td colspan="2">
-                            <label  for="departing-from">
-                            <i class="fa fa-map-marker"
-                            aria-hidden="true"></i>Departing from
-                            </label> 
-                        </td>
-                        <td colspan="2">
-                            <label  for="travelling-to">
-                            <i class="fa fa-map-marker"
-                            aria-hidden="true"></i>Travelling to
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                             <td rowspan="2" colspan="2">
-                                 <select id="departing-location" name="departing-location">
-                                     <option value="delhi">
-                                         Delhi
-                                     </option>
-                                     <option value="chennai">
-                                         Chennai
-                                     </option>
-                                     <option value="Mumbai">
-                                         Mumbai
-                                     </option>
-                                     <opton value="patna">
-                                         Patna
-                                     </opton>
-                                     <option value="Kolkata">
-                                         Kolkata
-                                     </option>
-                                     <option value="amritsar">
-                                         Amritsar
-                                     </option>
-                                 </select>
-                             </td>
-                             <td rowspan="2" colspan="2">
-                                <select id="destination" name="destination">
-                                    <option value="delhi">
-                                        Delhi
-                                    </option>
-                                    <option value="chennai">
-                                        Chennai
-                                    </option>
-                                    <option value="Mumbai">
-                                        Mumbai
-                                    </option>
-                                    <opton value="patna">
-                                        Patna
-                                    </opton>
-                                    <option value="Kolkata">
-                                        Kolkata
-                                    </option>
-                                    <option value="amritsar">
-                                        Amritsar
-                                    </option>
-                                </select>
-                            </td>
-                    </tr>
-                    <tr> </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label for="departing-date">
-                            <i class="fa fa-calendar" aria-hidden="true">
-                             </i>
-                             Departing</label>
-                        </td>
-                        <td colspan="2">
-                            <label for="returning-date">
-                            <i class="fa fa-calendar" aria-hidden="true">
-                             </i>
-                             Returning
-                             </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td rowspaan="2" colspan="2">
-                            <input type="date" name="departing-date" id="departing-date">
-                        </td>
-                        <td rowspaan="2" colspan="2">
-                            <input type="date" name="returning-date" id="returning-date">
-                        </td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                      <td colspan="2">
-                          <label for="adults">
-                            <i class="fa fa-user-plus" aria-hidden="true"></i>
-                            Adults
-                          </label>
-                      </td>
-                      <td colspan="2">
-                        <label for="children">
-                            <i class="fa fa-user-plus" aria-hidden="true"></i>
-                            Children
-                        </label>
-                      </td>
-                    </tr>
-                     <tr>
-                       <td colspan="2" rowspan="2">
-                           <input type="number" id="adults" name="adults">
-                       </td>
-                       <td colspan="2" rowspan="2">
-                         <input type="number" id="children" name="children">
-                       </td>
-                     </tr>
-                     <tr></tr>
-                     <tr>
-                        <td colspan="2">
-                            <label for="infants">
-                              <i class="fa fa-user-plus" aria-hidden="true"></i>
-                              Infants
-                            </label>
-                        </td>
-                        <td colspan="2">
-                          <label for="Promo-code">
-                              Promo Code
-                          </label>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td colspan="2" rowspan="2">
-                            <input type="number" id="Infants" name="infants">
-                        </td>
-                        <td colspan="2" rowspan="2">
-                          <input type="number" id="promo-code" name="promo-code">
-                        </td>
-                     </tr>
-                     <tr></tr>
-                     <tr>
-                         
-                     </tr>
-                </table>
+                <div id="layout">
+                <div id="departing-from">
+                    <label  for="departing-from">
+                        <i class="fa fa-map-marker"
+                        aria-hidden="true"></i> Departing from
+                    </label><br>
+                    <select id="departing-location" name="departing-location" placeholder="select a location">
+                        <option value="" selected disabled>Select a location</option> 
+                        <option value="delhi">
+                            Delhi
+                        </option>
+                        <option value="chennai">
+                            Chennai
+                        </option>
+                        <option value="Mumbai">
+                            Mumbai
+                        </option>
+                        <opton value="patna">
+                            Patna
+                        </opton>
+                        <option value="Kolkata">
+                            Kolkata
+                        </option>
+                        <option value="amritsar">
+                            Amritsar
+                        </option>
+                    </select>
+                </div>
+                <div id="travelling-to">
+                    <label  for="travelling-to">
+                        <i class="fa fa-map-marker"
+                        aria-hidden="true"></i> Travelling to
+                    </label><br>
+                    <select id="destination" name="destination">
+                        <option value="" selected disabled>Select a location</option>
+                        <option value="delhi">
+                            Delhi
+                        </option>
+                        <option value="chennai">
+                            Chennai
+                        </option>
+                        <option value="Mumbai">
+                            Mumbai
+                        </option>
+                        <opton value="patna">
+                            Patna
+                        </opton>
+                        <option value="Kolkata">
+                            Kolkata
+                        </option>
+                        <option value="amritsar">
+                            Amritsar
+                        </option>
+                    </select>
+                </div>
+                <div id="departure">
+                    <label for="departing-date">
+                        <i class="fa fa-calendar" aria-hidden="true">
+                         </i> Departing
+                    </label><br>
+                    <input type="text" name="departing-date" placeholder="Departure date"  id="departing-date" onfocus="this.type='date'">
+                </div>
+                <div id="arrival">
+                    <label for="returning-date">
+                        <i class="fa fa-calendar" aria-hidden="true">
+                         </i> Returning
+                     </label><br>
+                     <input type="text" name="returning-date" id="returning-date" value="Return Date" onfocus="this.type='date'"> 
+                </div>
+                <div id="adults-d">
+                    <label for="adults">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        Adults
+                    </label><br>
+                    <input type="number" id="adults" name="adults">
+                </div>
+                <div id="children-d">
+                    <label for="children">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        Children
+                    </label><br>
+                    <input type="number" id="children" name="children">
+                </div>
+                <div id="infants-d">
+                    <label for="infants">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        Infants
+                      </label><br>
+                      <input type="number" id="Infants" name="infants">
+                </div>
+                <div id="promo">
+                    <label for="Promo-code">
+                        Promo Code
+                    </label><br>
+                    <input type="number" id="promo-code" name="promo-code">
+                </div>
+                <div id="search">
+                    <input type="button" value="Search for flights">
+                </div>
+            </div>
+                </form>
+            </div>
+            <div id="article">
+                <h4>Sounds Air</h4>
+                <h2>CONNECTING NEW ZEALAND SINCE 1987</h2>
+                <hr>
+                <p>
+                    During COVID-19 Alert Level 4 & 3 Sounds Air are still available to transport essential workers & freight. Our pilots, ground crew & aircraft are standing by to meet your needs. We have strict hygiene and cleaning procedures in place to ensure our clients safety & health. Contact charters@soundsair.com for all your essential travel requirements!
+                </p><br>
+                <span id="flights-details"><a href="#">FIND OUT WHERE WE FLY</a></span>
             </div>
         </div>
     </section>
